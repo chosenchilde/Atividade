@@ -6,15 +6,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Atividade 7</title>
 </head>
-
 <body>
+    <button onclick="calculoData()">Insira Data</button>
     <script>
-        let data = prompt('Digite uma data no formato DD/MM/AAAA.')
-        let dataSplit = data.split('/')
-        let dataFormat = dataSplit[2] + '-' + dataSplit[1] + '-' + dataSplit[0]
+        function calculoData() {
+            var data = prompt('Digite uma data no formato DD/MM/AAAA.')
+            var dataSplit = data.split('/')
+            var age = 2023 - dataSplit[2]
 
-        document.write(dataFormat)
+            if (dataSplit[1] > 3) {
+                age--
+            } else if (dataSplit[1] == 3 && dataSplit[0] > 23) {
+                age--
+            }
 
+            document.write(age)
+        }
     </script>
 </body>
 

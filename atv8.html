@@ -4,23 +4,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Atividade 8</title>
+    <title>Document</title>
 </head>
+
 <body>
-    <button onclick="calculoData()">Insira Data</button>
+    <center><button id="calculo" onclick="calculo()">Insira Números Inteiros</button></center>
     <script>
-        function calculoData() {
-            var data = prompt('Digite uma data no formato DD/MM/AAAA.')
-            var dataSplit = data.split('/')
-            var age = 2023 - dataSplit[2]
+        function calculo() {
+            var n1 = parseInt(prompt('Digite um número inteiro.'))
+            var n2 = parseInt(prompt('Digite um segundo número inteiro.'))
 
-            if (dataSplit[1] > 3) {
-                age--
-            } else if (dataSplit[1] == 3 && dataSplit[0] > 23) {
-                age--
-            }
+            var soma = n1 + n2
+            var sub = n1 - n2
 
-            document.write(age)
+            document.write("Resultado da Soma: " + soma + "<br>")
+            document.write("Resultado da Subtração: " + sub)
         }
     </script>
 </body>
