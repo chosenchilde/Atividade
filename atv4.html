@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 4</title>
+</head>
+
+<body>
+    <button id="email" onclick="emailAdd()">Digite seu E-mail aqui.</button>
+    <script>
+        function emailAdd() {
+            var emailAdd = prompt('Adicione o seu Email aqui.')
+
+            if (emailAdd.indexOf('@') == -1) {
+                alert('O seu email não é válido')
+            } else if (emailAdd.indexOf('@') != -1) {
+                alert('O email é válido.')
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,17 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
+    <center><button id="calculo" onclick="calculo()">Insira Números Inteiros</button></center>
     <script>
-        var n1 = prompt('Digite um número inteiro.')
-        if (n1 == "" || n1 == null) {
-            alert("Digite um número válido.")
+        function calculo() {
+            var n1 = parseInt(prompt('Digite um número inteiro maior que o segundo.'))
+            var n2 = parseInt(prompt('Digite um segundo número inteiro menor que o primeiro.'))
+
+            if (n1 < n2) {
+                alert('Valores não são válidos.')
+            } else if (n1 > n2) {
+                document.write(`Resultado da Multiplicação: ${n1} x ${n2} = ` + n1 * n2)
+                document.write(`<br> Resultado da Divisão: ${n1} / ${n2} = ` + n1 / n2)
+            }
         }
     </script>
 </body>
+
 </html>
