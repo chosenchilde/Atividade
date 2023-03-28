@@ -5,17 +5,43 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Atividade 6</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Two+Tone" rel="stylesheet">
 </head>
 
 <body>
-    <script>
-        let data = prompt('Digite uma data no formato DD/MM/AAAA.')
-        let dataSplit = data.split('/')
-        let dataFormat = dataSplit[2] + '-' + dataSplit[1] + '-' + dataSplit[0]
 
-        document.write(dataFormat)
+    <h3><span class="material-icons-two-tone">calendar_month</span>Atividade 6</h3>
+    <p>6) Escreva e teste um algoritmo em JavaScript que exibe um botão na página que, ao ser clicado, solicita a data
+        de nascimento do usuário no formato "dd/mm/aaaa". Na sequência, exibe a data de nascimento no formato
+        "aaaa-mm-dd". Quando concluir, cole todo o código no campo abaixo:</p>
 
-    </script>
-</body>
+    <!-- Campo de formulário que recebe a entrada de informações do usuário. -->
+    <form onsubmit="trataData(event)">
+        Digite a data: <input type="text" name="databr" id="databr" placeholder="dd/mm/aaaa">
+        <button type="submit">Processar data</button><br>
+        System date: <input type="text" name="datasis" id="datasis" readonly>
+    </form>
+
+    <body>
+        <script>
+            function trataData(ev) {
+                // Bloqueia a ação normal do formulário quando enviado.
+                ev.preventDefault()
+
+                // Recebe a data do usuário.
+                var dataUsuario = document.getElementById('databr').value
+
+                // Desmonta a data para um array.
+                var partes = dataUsuario.split('/')
+
+                // Remonta a data, reformatando.
+                var dataSistema = `${partes[2]}-${partes[1]}-${partes[0]}`
+
+                // Escreve a data formatada no outro elemento. 
+                document.getElementById('datasis').value = dataSistema
+            }
+
+        </script>
+    </body>
 
 </html>

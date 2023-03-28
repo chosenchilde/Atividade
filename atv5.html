@@ -5,20 +5,46 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Atividade 5</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Two+Tone" rel="stylesheet">
 </head>
 
 <body>
-    <script>
-        var fruits = ["banana", "laranja", "acerola", "uva", "limão"]
-        var parts = fruits.length;
 
+    <h3><span class="material-icons-two-tone">calendar_month</span>Atividade 5</h3>
+    <p>5) Escreva e teste um algoritmo em JavaScript que lista os itens da coleção abaixo no navegador, 1 por linha.
+        Quando concluir, cole todo o código no campo abaixo:</p>
+    <pre>let fruits = ["banana", "laranja", "acerola", "uva", "limão"]</pre>
+
+    <!-- Aqui vai ser exibido o resultado do script. -->
+    <div id="saida"></div>
+
+    <script>
+        // Coleção de elementos.
+        var fruits = ["banana", "laranja", "acerola", "uva", "limão"]
+
+        // Variável com a saída HTML que abre a lista.
+        var saidaHTML = '<ul>'
+
+        // Iterando a coleção.
         for (
             let n = 0;
-            n < parts;
+            n < fruits.length;
             n++
         ) {
-            document.write(fruits[n] + ' ')
+            console.log(saidaHTML)
+            saidaHTML += `<li>${fruits[n]}</li>`
         }
+
+        // Fecha a lista
+        saidaHTML += "</ul>"
+
+        // Exibe o conteúdo do HTML dentro da <div> 
+        // 1ª forma. 
+        document.getElementById('saida').innerHTML = saidaHTML
+
+        // 2ª forma.
+        //saida.innerHTML = saidaHTML
+
     </script>
 </body>
 
